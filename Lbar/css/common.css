@@ -1,0 +1,26 @@
+:root {
+            /* Define a variable for the margin of the overlay, 96px at 1080p */
+            --margin: 5vmax;
+        }
+
+        html {
+            /* Explicitly set background color */
+            background-color: transparent;
+
+            /* Set default box-sizing to border-box for easier sizing of elements */
+            box-sizing: border-box;
+
+            /* Disable scrollbars by clipping page overflow */
+            overflow: hidden;
+
+            /* Set default font family */
+            font-family: Verdana, Geneva, sans-serif;
+
+            /* Set responsive root font size to 43.2px at 1080p */
+            font-size: 4vh;
+        }
+
+        *, *:before, *:after {
+            /* Make box-sizing property easy to change by components if required */
+            box-sizing: inherit;
+        }

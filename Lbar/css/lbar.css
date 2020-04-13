@@ -1,0 +1,24 @@
+.Lbar-section-1 {
+  overflow: hidden;
+  border-radius: 10px;
+  opacity: 0;
+  width: 220px;
+  height:270px;
+  position: absolute;
+  top:54px;
+  left:85px;
+  background: rgb(247,244,243);
+  background: linear-gradient(0deg, rgba(247,244,243,1) 100%, rgba(229,229,229,1) 0%);
+}
+.L-bar-lot {
+  margin: 7px;
+  font-size: 20pt;
+  color: #313E50;
+  font-weight: bold;
+}
+.L-bar-title {
+  margin: 7px;
+  font-size: 12pt;
+  color: #24B3BC;
+  font-weight: bold;
+}
