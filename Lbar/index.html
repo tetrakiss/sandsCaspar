@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Lbar</title>
     <link rel="stylesheet" href="css/common.css">
+      <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/lbar.css">
     <script src="src/libs/webcg-framework.umd.js"></script>
     <script src="src/libs/gsap-public/minified/gsap.min.js"></script>
@@ -19,15 +20,24 @@
       })
 
         webcg.on('play', function () {
-          gsap.set(".Lbar-section-1", {opacity:100});
+          gsap.set(".Lbar-section-1", {opacity:100});        
+          gsap.set(".Lbar-section-price", {opacity:100});
+
           //gsap.to(".Lbar-section-1", {duration: 1, opacity: 0.3});
-          gsap.fromTo(".Lbar-section-1", {height: 0}, {duration: 1.5, height: 270});
+          gsap.fromTo(".Lbar-section-1", {height: 0}, {duration: 1.2, ease: "power3.out", height: 270});
+          gsap.fromTo(".Lbar-salePrice", {height: 0}, {duration: 0.7, ease: "power3.out", height: 68});
+          gsap.fromTo(".Lbar-section-price-child", {height: 0}, {duration: 1, ease: "power3.out", height: 100});
+
+
 
         })
 
         webcg.on('stop', function () {
           gsap.fromTo(".Lbar-section-1", {height: 270}, {duration: 0.5, height: 0});
+          gsap.fromTo(".Lbar-salePrice", {height: 68}, {duration: 0.1, height: 0});
+          gsap.fromTo(".Lbar-section-price-child", {height: 100}, {duration: 0.2, height: 0});
         })
+
 
 
 
@@ -36,13 +46,31 @@
   </head>
 <body>
 
-<div class="overlay">
+
   <div class="Lbar">
     <div class="Lbar-section-1">
       <div class="L-bar-lot" id="lot">009-001-291</div>
       <div class="L-bar-title" id="title">Костюм «Бархатная песня»</div>
+      <div class="L-bar-description">
+        <div  id="desc1">
+          Цвета: черный, темно-синий, бордовый, светло-коричневый, фиолетовый, бирюзовый, горчичный
+        </div>
+      </div>
     </div>
 
+    <div class="Lbar-section-price">
+      <div class="Lbar-section-price-container">
+        <div class="Lbar-section-price-child">
+          <span id="price" class="price cross">14 999 ₽</span>
+          <span id="discount" class="discount">50%</span>
+        </div>
+        <div class="Lbar-section-salePrice-container">
+          <div class="Lbar-salePrice" >
+            <span id="salePriceText" class="salePriceText">Цена только сегодня</span>
+            <span id="salePrice" class="salePrice">4 999 ₽</span>
+          </div>
+        </div>
+      </div>
   </div>
 
   </div>

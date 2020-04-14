@@ -11,14 +11,131 @@
   background: linear-gradient(0deg, rgba(247,244,243,1) 100%, rgba(229,229,229,1) 0%);
 }
 .L-bar-lot {
-  margin: 7px;
-  font-size: 20pt;
+  font-family: 'Shop And Show Sans Pro';
+  font-style: normal;
+  margin-left: 7px;
+  margin-right: 7px;
+  margin-top: 7px;
+  font-size: 28pt;
   color: #313E50;
   font-weight: bold;
 }
 .L-bar-title {
-  margin: 7px;
-  font-size: 12pt;
+  font-family: 'Shop And Show Sans Pro';
+  font-style: normal;
+  line-height: 19px;
+  margin-left: 7px;
+  margin-right: 7px;
+  margin-bottom: 7px;
+  font-size: 16pt;
   color: #24B3BC;
   font-weight: bold;
+}
+.L-bar-description {
+  line-height: 22px;
+  font-family: 'Shop and Show Sans Pro SemBd';
+  font-style: normal;
+  margin-left: 7px;
+  margin-right: 7px;
+  margin-bottom: 7px;
+  font-size: 16pt;
+  color: #313E50;
+  font-weight: 600;
+}
+.Lbar-section-price-container {
+  position: relative;
+  height: 100px;
+}
+.Lbar-section-price-child {
+  line-height: 17px;
+  overflow: hidden;
+  width: 220px;
+  height:100px;
+  border-radius: 10px;
+  position: absolute;
+  bottom: 0;
+  background: rgb(247,244,243);
+  background: linear-gradient(0deg, rgba(247,244,243,1) 100%, rgba(229,229,229,1) 0%);
+}
+.Lbar-section-price {
+  opacity: 0;
+  overflow: hidden;
+  width: 220px;
+  height:100px;
+  position: absolute;
+  top:328px;
+  left:85px;
+
+}
+.Lbar-section-salePrice-container {
+  position: relative;
+  height: 100px;
+
+}
+.Lbar-salePrice {
+  
+  height: 68px;
+  width: 220px;
+  line-height: 14px;
+  background-color: #E72234;
+  border-bottom-left-radius:10px;
+  border-top-left-radius:0px;
+  border-bottom-right-radius:10px;
+  border-top-right-radius:0px;
+  position: absolute;
+  bottom: 0;
+}
+.salePriceText {
+  color: #FFF;
+  display: block;
+  font-family: 'Shop And Show Sans Pro';
+  font-style: normal;
+  line-height: 19px;
+  padding-left: 7px;
+  padding-right: 7px;
+  font-size: 16pt;
+  font-weight: bold;
+}
+.salePrice {
+  color: #FFF;
+  display: block;
+  font-family: 'Shop And Show Sans Pro';
+  font-style: normal;
+  line-height: 45px;
+  padding-left: 7px;
+  padding-right: 7px;
+  font-size: 28pt;
+  font-weight: bold;
+
+}
+.price {
+  padding-left: 7px;
+  color: #707070;
+  font-size: 18px;
+  font-family: 'Shop And Show Sans Pro';
+  font-style: normal;
+  font-weight: bold;
+  }
+  .discount {
+    padding-left: 2px;
+    color: #C60527;
+    font-size: 18px;
+    font-family: 'Shop And Show Sans Pro';
+    font-style: normal;
+    font-weight: bold;
+  }
+
+.cross {
+    position: relative;
+    display: inline-block;
+}
+.cross::before {
+    content: '';
+    border-bottom: 2px solid red;
+    -webkit-transform: skewY(5deg);
+    transform: skewY(5deg);
+    width: 100%;
+    position: absolute;
+    right: 0;
+    top: 50%;
 }
