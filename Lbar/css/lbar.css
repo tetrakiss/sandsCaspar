@@ -130,13 +130,3 @@
     position: relative;
     display: inline-block;
 }
-.cross::before {
-    content: '';
-    border-bottom: 2px solid red;
-    -webkit-transform: skewY(5deg);
-    transform: skewY(5deg);
-    width: 100%;
-    position: absolute;
-    right: 0;
-    top: 50%;
-}

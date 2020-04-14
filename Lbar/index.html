@@ -8,52 +8,86 @@
     <link rel="stylesheet" href="css/lbar.css">
     <script src="src/libs/webcg-framework.umd.js"></script>
     <script src="src/libs/gsap-public/minified/gsap.min.js"></script>
+    <script src="src/libs/gsap-public/minified/CSSRulePlugin.min.js"></script>
+    <style>
+    .cross::before {
+        content: '';
+        margin-left: 4px;
+        border-bottom: 2px solid red;
+        -webkit-transform: skewY(3deg);
+        transform: skewY(3deg);
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 50%;
+    }
+    </style>
     <script type="text/javascript">
-        // Set initial data for webcg-devtools
-      //  window.debugData = { 'f0': 'Lower third with a subtitle', 'f1': 'and CSS animations' }
 
-      webcg.on('data', function (data) {
-        document.querySelector('#lot').innerHTML = data.lot ? data.lot.text || data.lot : ''
-          document.querySelector('#desc1').innerHTML = data.desc1 ? data.desc1.text || data.desc1 : ''
-        document.querySelector('#title').innerHTML = data.title ? data.title.text || data.title : ''
-        document.querySelector('#price').innerHTML = data.price ? data.price.text || data.price : ''
-        document.querySelector('#discount').innerHTML = data.discount ? data.discount.text || data.discount : ''
-        document.querySelector('#salePriceText').innerHTML = data.salePriceText ? data.salePriceText.text || data.salePriceText : ''
-        document.querySelector('#salePrice').innerHTML = data.salePrice ? data.salePrice.text || data.salePrice : ''
+    document.addEventListener("DOMContentLoaded", function(event) {
+
+  // wait until external stylesheets, links, images, and other external assets are loaded in the window
+  window.addEventListener("load", function(){
+    gsap.registerPlugin(CSSRulePlugin);
+    var rule = CSSRulePlugin.getRule(".cross::before");
+
+
+    webcg.on('data', function (data) {
+      document.querySelector('#lot').innerHTML = data.lot ? data.lot.text || data.lot : ''
+        document.querySelector('#desc1').innerHTML = data.desc1 ? data.desc1.text || data.desc1 : ''
+      document.querySelector('#title').innerHTML = data.title ? data.title.text || data.title : ''
+      document.querySelector('#price').innerHTML = data.price ? data.price.text || data.price : ''
+      document.querySelector('#discount').innerHTML = data.discount ? data.discount.text || data.discount : ''
+      document.querySelector('#salePriceText').innerHTML = data.salePriceText ? data.salePriceText.text || data.salePriceText : ''
+      document.querySelector('#salePrice').innerHTML = data.salePrice ? data.salePrice.text || data.salePrice : ''
+
+    })
+
+      webcg.on('play', function () {
+        gsap.set(".Lbar-section-1", {opacity:100});
+        gsap.set(".Lbar-section-price", {opacity:100});
+        gsap.set(".L-bar-title", {opacity:0});
+        gsap.set("#desc1", {opacity:0});
+        gsap.set("#salePriceText", {opacity:0});
+        gsap.set("#salePrice", {opacity:0});
+        gsap.set(rule, {cssRule: {width: 0, skewY: 0}});
+
+
+
+
+        var timeline = gsap.timeline();
+        //gsap.to("#title",{duration: 5.3, ease: "elastic", opacity: 1} );
+        timeline.fromTo(".Lbar-section-1", {height: 0}, {duration: 1.2, ease: "power3.out", height: 270});
+        timeline.fromTo(".L-bar-title", {opacity: 0}, {duration: 0.3,   opacity:1}, "-=1");
+        timeline.fromTo("#desc1", {opacity: 0}, {duration: 0.5,   opacity:1}, "-=0.8");
+        //timeline.to(".L-bar-title",{duration: 0.3, ease: "elastic", opacity: 100} );
+        timeline.fromTo(".Lbar-salePrice", {height: 0}, {duration: 0.7, ease: "power3.out", height: 68}, "-=1");
+        timeline.fromTo(".Lbar-section-price-child", {height: 0}, {duration: 1, ease: "power3.out", height: 100}, "-=1");
+        timeline.fromTo("#salePriceText", {opacity: 0}, {duration: 0.5,   opacity:1}, "-=0.8");
+        timeline.fromTo("#salePrice", {opacity: 0}, {duration: 0.5,   opacity:1}, "-=0.8");
+        timeline.to(rule, 0.5, {cssRule: {width: 70, skewY: 3}}, "-=0.4");
+
+
+
 
       })
 
-        webcg.on('play', function () {
-          gsap.set(".Lbar-section-1", {opacity:100});
-          gsap.set(".Lbar-section-price", {opacity:100});
-          gsap.set(".L-bar-title", {opacity:0});
-          gsap.set("#desc1", {opacity:0});
-          gsap.set("#salePriceText", {opacity:0});
-          gsap.set("#salePrice", {opacity:0});
+      webcg.on('stop', function () {
+        gsap.fromTo(".Lbar-section-1", {height: 270}, {duration: 0.5, height: 0});
+        gsap.fromTo(".Lbar-salePrice", {height: 68}, {duration: 0.1, height: 0});
+        gsap.fromTo(".Lbar-section-price-child", {height: 100}, {duration: 0.2, height: 0});
+        gsap.set("#desc1", {opacity:0});
+        gsap.set("#salePriceText", {opacity:0});
+        gsap.set("#salePrice", {opacity:0});
+        gsap.set(rule, {cssRule: {width: 0, skewY: 0}});
+
+      })
+
+  }, false);
+
+});
 
 
-
-          var timeline = gsap.timeline();
-          //gsap.to("#title",{duration: 5.3, ease: "elastic", opacity: 1} );
-          timeline.fromTo(".Lbar-section-1", {height: 0}, {duration: 1.2, ease: "power3.out", height: 270});
-          timeline.fromTo(".L-bar-title", {opacity: 0}, {duration: 0.3,   opacity:1}, "-=1");
-          timeline.fromTo("#desc1", {opacity: 0}, {duration: 0.5,   opacity:1}, "-=0.8");
-          //timeline.to(".L-bar-title",{duration: 0.3, ease: "elastic", opacity: 100} );
-          timeline.fromTo(".Lbar-salePrice", {height: 0}, {duration: 0.7, ease: "power3.out", height: 68}, "-=1");
-          timeline.fromTo(".Lbar-section-price-child", {height: 0}, {duration: 1, ease: "power3.out", height: 100}, "-=1");
-          timeline.fromTo("#salePriceText", {opacity: 0}, {duration: 0.5,   opacity:1}, "-=0.8");
-            timeline.fromTo("#salePrice", {opacity: 0}, {duration: 0.5,   opacity:1}, "-=0.8");
-
-
-
-
-        })
-
-        webcg.on('stop', function () {
-          gsap.fromTo(".Lbar-section-1", {height: 270}, {duration: 0.5, height: 0});
-          gsap.fromTo(".Lbar-salePrice", {height: 68}, {duration: 0.1, height: 0});
-          gsap.fromTo(".Lbar-section-price-child", {height: 100}, {duration: 0.2, height: 0});
-        })
 
 
 
