@@ -14,6 +14,7 @@
 
       webcg.on('data', function (data) {
         document.querySelector('#lot').innerHTML = data.lot ? data.lot.text || data.lot : ''
+          document.querySelector('#desc1').innerHTML = data.desc1 ? data.desc1.text || data.desc1 : ''
         document.querySelector('#title').innerHTML = data.title ? data.title.text || data.title : ''
         document.querySelector('#price').innerHTML = data.price ? data.price.text || data.price : ''
         document.querySelector('#discount').innerHTML = data.discount ? data.discount.text || data.discount : ''
