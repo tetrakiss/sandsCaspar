@@ -15,12 +15,15 @@
       webcg.on('data', function (data) {
         document.querySelector('#lot').innerHTML = data.lot ? data.lot.text || data.lot : ''
         document.querySelector('#title').innerHTML = data.title ? data.title.text || data.title : ''
-    //  document.querySelector('.line-1').innerHTML = data.f0 ? data.f0.text || data.f0 : ''
-    //  document.querySelector('.line-2').innerHTML = data.f1 ? data.f1.text || data.f1 : ''
+        document.querySelector('#price').innerHTML = data.price ? data.price.text || data.price : ''
+        document.querySelector('#discount').innerHTML = data.discount ? data.discount.text || data.discount : ''
+        document.querySelector('#salePriceText').innerHTML = data.salePriceText ? data.salePriceText.text || data.salePriceText : ''
+        document.querySelector('#salePrice').innerHTML = data.salePrice ? data.salePrice.text || data.salePrice : ''
+
       })
 
         webcg.on('play', function () {
-          gsap.set(".Lbar-section-1", {opacity:100});        
+          gsap.set(".Lbar-section-1", {opacity:100});
           gsap.set(".Lbar-section-price", {opacity:100});
 
           //gsap.to(".Lbar-section-1", {duration: 1, opacity: 0.3});
