@@ -21,6 +21,7 @@
   font-weight: bold;
 }
 .L-bar-title {
+  opacity: 0;
   font-family: 'Shop And Show Sans Pro';
   font-style: normal;
   line-height: 19px;
@@ -73,7 +74,7 @@
 
 }
 .Lbar-salePrice {
-  
+
   height: 68px;
   width: 220px;
   line-height: 14px;

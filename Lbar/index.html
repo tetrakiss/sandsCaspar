@@ -26,11 +26,19 @@
         webcg.on('play', function () {
           gsap.set(".Lbar-section-1", {opacity:100});
           gsap.set(".Lbar-section-price", {opacity:100});
+          gsap.set(".L-bar-title", {opacity:0});
+          gsap.set("#desc1", {opacity:0});
 
-          //gsap.to(".Lbar-section-1", {duration: 1, opacity: 0.3});
-          gsap.fromTo(".Lbar-section-1", {height: 0}, {duration: 1.2, ease: "power3.out", height: 270});
-          gsap.fromTo(".Lbar-salePrice", {height: 0}, {duration: 0.7, ease: "power3.out", height: 68});
-          gsap.fromTo(".Lbar-section-price-child", {height: 0}, {duration: 1, ease: "power3.out", height: 100});
+
+          var timeline = gsap.timeline();
+          //gsap.to("#title",{duration: 5.3, ease: "elastic", opacity: 1} );
+          timeline.fromTo(".Lbar-section-1", {height: 0}, {duration: 1.2, ease: "power3.out", height: 270});
+          timeline.fromTo(".L-bar-title", {opacity: 0}, {duration: 0.3,   opacity:1}, "-=1");
+          timeline.fromTo("#desc1", {opacity: 0}, {duration: 0.5,   opacity:1}, "-=0.8");
+          //timeline.to(".L-bar-title",{duration: 0.3, ease: "elastic", opacity: 100} );
+          timeline.fromTo(".Lbar-salePrice", {height: 0}, {duration: 0.7, ease: "power3.out", height: 68}, "-=1");
+          timeline.fromTo(".Lbar-section-price-child", {height: 0}, {duration: 1, ease: "power3.out", height: 100}, "-=1");
+
 
 
 
