@@ -130,3 +130,29 @@
     position: relative;
     display: inline-block;
 }
+.Lbar-section-3 {
+  border-radius: 10px;
+  opacity: 0;
+  overflow: hidden;
+  width: 220px;
+  height:60px;
+  position: absolute;
+  top:432px;
+  left:85px;
+  background: rgb(247,244,243);
+  background: linear-gradient(0deg, rgba(247,244,243,1) 100%, rgba(229,229,229,1) 0%);
+
+}
+.Lbar-section-4 {
+  border-radius: 10px;
+  opacity: 0;
+  overflow: hidden;
+  width: 220px;
+  height:78px;
+  position: absolute;
+  top:496px;
+  left:85px;
+  background: rgb(247,244,243);
+  background: linear-gradient(0deg, rgba(247,244,243,1) 100%, rgba(229,229,229,1) 0%);
+
+}

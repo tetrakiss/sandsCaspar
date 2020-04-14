@@ -30,9 +30,12 @@
   window.addEventListener("load", function(){
     gsap.registerPlugin(CSSRulePlugin);
     var rule = CSSRulePlugin.getRule(".cross::before");
+    //получение длины объекта цены чтобы начертить черту на всю длину
+    var crossWidth =document.getElementById("price").getBoundingClientRect().width;
 
 
     webcg.on('data', function (data) {
+      crossWidth =document.getElementById("price").getBoundingClientRect().width;
       document.querySelector('#lot').innerHTML = data.lot ? data.lot.text || data.lot : ''
         document.querySelector('#desc1').innerHTML = data.desc1 ? data.desc1.text || data.desc1 : ''
       document.querySelector('#title').innerHTML = data.title ? data.title.text || data.title : ''
@@ -44,14 +47,16 @@
     })
 
       webcg.on('play', function () {
-        gsap.set(".Lbar-section-1", {opacity:100});
-        gsap.set(".Lbar-section-price", {opacity:100});
+        crossWidth =document.getElementById("price").getBoundingClientRect().width;
+        gsap.set(".Lbar-section-1", {opacity:1});
+        gsap.set(".Lbar-section-price", {opacity:1});
         gsap.set(".L-bar-title", {opacity:0});
         gsap.set("#desc1", {opacity:0});
         gsap.set("#salePriceText", {opacity:0});
         gsap.set("#salePrice", {opacity:0});
         gsap.set(rule, {cssRule: {width: 0, skewY: 0}});
-
+        gsap.set(".Lbar-section-3", {opacity:1});
+        gsap.set(".Lbar-section-4", {opacity:1});
 
 
 
@@ -65,7 +70,9 @@
         timeline.fromTo(".Lbar-section-price-child", {height: 0}, {duration: 1, ease: "power3.out", height: 100}, "-=1");
         timeline.fromTo("#salePriceText", {opacity: 0}, {duration: 0.5,   opacity:1}, "-=0.8");
         timeline.fromTo("#salePrice", {opacity: 0}, {duration: 0.5,   opacity:1}, "-=0.8");
-        timeline.to(rule, 0.5, {cssRule: {width: 70, skewY: 3}}, "-=0.4");
+        timeline.to(rule, 0.5, {cssRule: {width: crossWidth, skewY: 3}}, "-=0.4");
+        timeline.fromTo(".Lbar-section-3", {height: 0}, {duration: 1, ease: "power3.out", height: 60}, "-=1");
+        timeline.fromTo(".Lbar-section-4", {height: 0}, {duration: 1, ease: "power3.out", height: 78}, "-=1");
 
 
 
@@ -80,6 +87,9 @@
         gsap.set("#salePriceText", {opacity:0});
         gsap.set("#salePrice", {opacity:0});
         gsap.set(rule, {cssRule: {width: 0, skewY: 0}});
+        gsap.fromTo(".Lbar-section-3", {height: 60}, {duration: 0.5,  height: 0} );
+        gsap.fromTo(".Lbar-section-4", {height: 78}, {duration: 0.5,  height: 0});
+        crossWidth =document.getElementById("price").getBoundingClientRect().width;
 
       })
 
@@ -122,6 +132,10 @@
           </div>
         </div>
       </div>
+  </div>
+  <div class="Lbar-section-3">
+  </div>
+  <div class="Lbar-section-4">
   </div>
 
   </div>
