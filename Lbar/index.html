@@ -64,6 +64,11 @@
         gsap.set(rule, {cssRule: {width: 0, skewY: 0}});
         gsap.set(".Lbar-section-3", {opacity:1});
         gsap.set(".Lbar-section-4", {opacity:1});
+        gsap.set("#phone", {opacity:0});
+        gsap.set("website", {opacity:0});
+        gsap.set("section-3-text", {opacity:0});
+        gsap.set("section-3-value", {opacity:0});
+
 
 
 
@@ -80,6 +85,10 @@
         timeline.to(rule, 0.5, {cssRule: {width: crossWidth, skewY: 3}}, "-=0.4");
         timeline.fromTo(".Lbar-section-3", {height: 0}, {duration: 1, ease: "power3.out", height: 60}, "-=1");
         timeline.fromTo(".Lbar-section-4", {height: 0}, {duration: 1, ease: "power3.out", height: 78}, "-=1");
+        timeline.fromTo("#phone", {opacity: 0}, {duration: 0.5, ease: "sine.out",  opacity:1}, "-=0.7");
+        timeline.fromTo("#website", {opacity: 0}, {duration: 0.5, ease: "sine.out",  opacity:1}, "-=0.6");
+        timeline.fromTo("#section-3-text", {opacity: 0}, {duration: 0.5, ease: "sine.out",  opacity:1}, "-=0.4");
+        timeline.fromTo("#section-3-value", {opacity: 0}, {duration: 0.5, ease: "sine.out",  opacity:1}, "-=0.5");
 
 
 
@@ -141,8 +150,13 @@
       </div>
   </div>
   <div class="Lbar-section-3">
+    <span id="section-3-text" class="section-3-text"> Доставка</span>
+    <span id="section-3-value" class="section-3-value"> 190 ₽</span>
   </div>
   <div class="Lbar-section-4">
+    <span id="website" class="website">  Shopandshow.ru</span>
+    <span id="phone" class="phone">  8 800 301 60 90</span>
+    <span id="phoneDesc" class="phoneDesc">Звонок по РФ бесплатно</span>
   </div>
 
   </div>
