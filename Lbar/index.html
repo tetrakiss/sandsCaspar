@@ -35,7 +35,7 @@
 
 
     webcg.on('data', function (data) {
-      crossWidth =document.getElementById("price").getBoundingClientRect().width;
+
       document.querySelector('#lot').innerHTML = data.lot ? data.lot.text || data.lot : ''
         document.querySelector('#desc1').innerHTML = data.desc1 ? data.desc1.text || data.desc1 : ''
       document.querySelector('#title').innerHTML = data.title ? data.title.text || data.title : ''
@@ -43,7 +43,13 @@
       document.querySelector('#discount').innerHTML = data.discount ? data.discount.text || data.discount : ''
       document.querySelector('#salePriceText').innerHTML = data.salePriceText ? data.salePriceText.text || data.salePriceText : ''
       document.querySelector('#salePrice').innerHTML = data.salePrice ? data.salePrice.text || data.salePrice : ''
+      if(!data.price){
 
+        crossWidth=0;
+        console.log(crossWidth);
+      }else {
+        crossWidth =document.getElementById("price").getBoundingClientRect().width;
+      }
     })
 
       webcg.on('play', function () {
@@ -54,6 +60,7 @@
         gsap.set("#desc1", {opacity:0});
         gsap.set("#salePriceText", {opacity:0});
         gsap.set("#salePrice", {opacity:0});
+
         gsap.set(rule, {cssRule: {width: 0, skewY: 0}});
         gsap.set(".Lbar-section-3", {opacity:1});
         gsap.set(".Lbar-section-4", {opacity:1});
