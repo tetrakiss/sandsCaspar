@@ -1,0 +1,58 @@
+.sizes {
+    overflow: hidden;
+}
+.sizes-container {
+    overflow: hidden;
+    border-radius: 10px;
+    opacity: 0;
+    width: 439px;
+    height:81px;
+    position: absolute;
+    bottom:53px;
+    left:532px;
+    background: rgb(245,243,241);
+    background: linear-gradient(0deg, rgba(245,243,241,1) 100%, rgba(243,241,239,1) 0%);
+  }
+  .sizes-description {
+        opacity: 0;
+      font-size: 22px;
+      color: #323e4b;
+      font-family: 'Shop and Show Sans Pro SemBd';
+      font-weight: normal;      
+
+  }
+  .sizes-values-container {
+    margin-top: 5px;
+    display: flex;
+    flex-direction:row;
+    padding-left: 15px; 
+    font-size: 20px;
+    overflow: hidden;
+  }
+  .size-contaner {
+      
+      margin-right: 5px;      
+    flex: 0 0 0px;
+      border-radius: 10px;
+      font-size: 22px;
+      padding-left: 9px;
+      padding-top: 4px;
+      padding-bottom: 4px;
+      padding-right: 9px;
+      color: #ffffff;
+  }
+  .green {
+      background-color: #81A727;
+  }
+  .red {
+      background-color: #AB0D07;
+  }
+  .grey {
+      background-color: #C9C9C9;
+  }
+  .yellow {
+      background-color: #a8931e;
+  }
+  .one, .two, .three, .four, .five, .six, .seven, .eight {
+    opacity: 1;
+  }

@@ -7,8 +7,8 @@
   position: absolute;
   top:54px;
   left:85px;
-  background: rgb(247,244,243);
-  background: linear-gradient(0deg, rgba(247,244,243,1) 100%, rgba(229,229,229,1) 0%);
+  background: rgb(245,243,241);
+  background: linear-gradient(0deg, rgba(245,243,241,1) 100%, rgba(243,241,239,1) 0%);
 }
 .L-bar-lot {
   font-family: 'Shop And Show Sans Pro';
@@ -55,8 +55,8 @@
   border-radius: 10px;
   position: absolute;
   bottom: 0;
-  background: rgb(247,244,243);
-  background: linear-gradient(0deg, rgba(247,244,243,1) 100%, rgba(229,229,229,1) 0%);
+  background: rgb(245,243,241);
+  background: linear-gradient(0deg, rgba(245,243,241,1) 100%, rgba(243,241,239,1) 0%);
 }
 .Lbar-section-price {
   opacity: 0;
@@ -139,8 +139,8 @@
   position: absolute;
   top:432px;
   left:85px;
-  background: rgb(247,244,243);
-  background: linear-gradient(0deg, rgba(247,244,243,1) 100%, rgba(229,229,229,1) 0%);
+  background: rgb(245,243,241);
+  background: linear-gradient(0deg, rgba(245,243,241,1) 100%, rgba(243,241,239,1) 0%);
 
 }
 .Lbar-section-4 {
@@ -152,7 +152,7 @@
   position: absolute;
   top:496px;
   left:85px;
-  background: rgb(247,244,243);
-  background: linear-gradient(0deg, rgba(247,244,243,1) 100%, rgba(229,229,229,1) 0%);
+  background: rgb(245,243,241);
+  background: linear-gradient(0deg, rgba(245,243,241,1) 100%, rgba(243,241,239,1) 0%);
 
 }
