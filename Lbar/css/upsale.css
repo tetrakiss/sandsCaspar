@@ -1,0 +1,88 @@
+.wrapper {
+    overflow: hidden;
+    position: relative;
+    width: 134px;
+  }
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .box{
+    border-radius: 10px;
+    background: rgb(245,243,241);
+    background: linear-gradient(0deg, rgba(245,243,241,1) 100%, rgba(243,241,239,1) 0%);
+    opacity: 1;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 5;
+  }
+
+
+.upsale {
+    overflow: hidden;
+}
+.upsale-container {
+    overflow: hidden;
+    border-radius: 10px;
+    opacity: 0;
+    width: 439px;
+    height:81px;
+    position: absolute;
+    bottom:53px;
+    left:532px;
+    background: rgb(245,243,241);
+    background: linear-gradient(0deg, rgba(245,243,241,1) 100%, rgba(243,241,239,1) 0%);
+  }
+.upsale-image-container {
+    
+    position: absolute;
+    z-index: 100;
+    left:837px;
+    bottom:96px;
+    border-radius: 10px;
+    opacity: 0;
+    width: 134px;
+    height:134px;
+}
+
+.upsalse-image {
+    overflow: hidden;
+    width: 134px;
+    height:134px;
+    border-radius: 10px;
+    
+    object-fit: cover;
+   
+}
+.upsale-lot {
+    margin-top: 6px;
+    opacity: 0;
+    font-size: 22px;
+    color: #323e4b;
+    font-family: 'Shop and Show Sans Pro SemBd';
+    font-weight: normal;  
+}
+.upsale-description{
+    
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 419px;
+    height: 20px;    
+    overflow: hidden;
+    margin-top: 7px;
+    opacity: 0;
+    font-size: 16px;
+    line-height: 19px;
+    color: #323e4b;
+    font-family: 'Shop and Show Sans Pro SemBd';
+    font-weight: normal;
+    margin-right: 10px;
+    
+}

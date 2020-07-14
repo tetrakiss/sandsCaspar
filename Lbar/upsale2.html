@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upsale</title>
+    <link rel="stylesheet" href="css/common.css">
+      <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/lbar.css">
+    <link rel="stylesheet" href="css/sizes.css">
+    <link rel="stylesheet" href="css/upsale.css">
+    <script src="src/libs/webcg-framework.umd.js"></script>
+    <script src="src/libs/gsap-public/minified/gsap.min.js"></script>
+    <script src="src/libs/gsap-public/minified/CSSRulePlugin.min.js"></script>
+    <style>
+ 
+    </style>
+    <script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", function(event) {
+        
+  // wait until external stylesheets, links, images, and other external assets are loaded in the window
+  window.addEventListener("load", function(){
+   
+
+    webcg.on('data', function (data) {
+        //document.querySelector('#description').innerHTML = data.description ? data.description.text || data.description : ''
+      
+    })
+
+      webcg.on('play', function () {
+       
+        gsap.set(".upsale-container", {opacity:1});
+
+        var timeline = gsap.timeline();
+        timeline.fromTo(".upsale-container", {width: 0}, {duration: 1.2, ease: "power3.out", width: 439});
+        timeline.fromTo(".upsale-lot", {opacity: 0}, {duration: 0.3,   opacity:1}, "-=0.8");
+        timeline.to(".upsale-lot", {x: 15,  duration: 0.5, ease: "power3.out"}, "-=0.9");
+        timeline.fromTo(".upsale-description", {opacity: 0}, {duration: 0.3,   opacity:1}, "-=0.7");
+        timeline.to(".upsale-description", {x: 15,  duration: 0.5, ease: "power3.out"}, "-=0.8");
+        timeline.to(".upsale-lot", {x: 15,  duration: 0.5, ease: "power3.out"}, "-=0.8");
+        timeline.fromTo(".upsale-image-container ", {opacity: 0}, {duration: 0.3,   opacity:1}, "-=0.7");       
+        timeline.to(".box", {duration: 0.7,ease: "power3.out", y: "100%"}, "-=0.7");
+
+
+        
+       
+
+       
+       
+        
+      })
+
+      webcg.on('stop', function () {
+        gsap.to(".box", {duration: 0.1,ease: "power3.out", y: "0%"});
+        gsap.fromTo(".upsale-image-container", {opacity:1}, {duration: 0.1, opacity: 0});
+       
+        gsap.fromTo(".upsale-lot", {opacity:1}, {duration: 0.1, opacity: 0});
+        gsap.to(".upsale-lot", {x: -15,  duration: 0.2});
+        gsap.fromTo(".upsale-description", {opacity:1}, {duration: 0.1, opacity: 0});        
+        gsap.to(".upsale-description", {x: -15,  duration: 0.2});
+        gsap.fromTo(".upsale-container", {width: 439}, {duration: 1, width: 0});
+        
+
+      })
+
+  }, false);
+
+});
+
+
+
+
+
+
+
+        </script>
+  </head>
+<body>
+  
+      
+    <div class="upsale-image-container">
+        <div class="wrapper">  
+        <div class="box"></div>
+        <div class="upsale-image-mask">
+            <img src="img/upsale1200x.jpg" class="upsalse-image">
+        </div>
+    </div>
+</div>
+    <div class="upsale">
+
+        <div class="upsale-container">
+            <div class="upsale-lot" id="lot">009-005-424</div>
+            <div class="upsale-description" id="description">Крем для лица FarmStay с коллагеном (50 мл)Крем для лица FarmStay с коллагеном (50 мл)</div>
+           
+        </div>
+    </div>
+
+</body>
+</html>
